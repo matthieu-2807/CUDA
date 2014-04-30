@@ -57,7 +57,7 @@
 <h3>
 <a name="lab-1" class="anchor" href="#lab-1"><span class="octicon octicon-link"></span></a>Lab 1</h3>
 
-<p>L'étape suivante est l'allocation de mémoire dans le GPU, l'échange de donnée entre le CPU et le GPU et l'exécution du code dans le GPU. Nous ajoutons à cela un timer et une gestion des erreurs lors des allocations de mémoire.</p>
+<p>L'étape suivante est l'allocation de mémoire dans le GPU, l'échange de données entre le CPU et le GPU et l'exécution du code dans le GPU. Nous ajoutons à cela un timer et une gestion des erreurs lors des allocations de mémoire.</p>
 
 <div class="highlight highlight-c"><pre><span class="n">__global__</span>  <span class="kt">void</span> <span class="nf">vecAdd</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span> <span class="n">A</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">B</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">C</span><span class="p">)</span> 
 <span class="p">{</span>  
@@ -82,6 +82,31 @@
 
 <p>Cette partie consiste à s'assurer que le GPU est compatible avec le code que nous souhaitons exécuter. Ici nous utilisons un GPU qui a la version 2.1, mais notre code vérifie que le GPU soit équipé d'une version 1.3 ou plus.
 De plus, nous séparons les codes C et CUDA dans des fichiers différents et réalisons un makefile permettant de compiler plusieurs fichier (.c et .cu) en une commande.</p>
+
+<div class="highlight highlight-c"><pre><span class="kt">void</span> <span class="nf">cudaDeviceInit</span><span class="p">(</span><span class="kt">int</span> <span class="n">major</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minor</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">devCount</span><span class="p">,</span> <span class="n">device</span><span class="p">;</span>
+    <span class="n">cudaGetDeviceCount</span><span class="p">(</span><span class="o">&amp;</span><span class="n">devCount</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">devCount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"No CUDA capable devices detected. </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">device</span> <span class="o">&lt;</span> <span class="n">devCount</span><span class="p">;</span> <span class="n">device</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">cudaDeviceProp</span> <span class="n">props</span><span class="p">;</span>
+        <span class="n">cudaGetDeviceProperties</span><span class="p">(</span><span class="o">&amp;</span><span class="n">props</span><span class="p">,</span> <span class="n">device</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">props</span><span class="p">.</span><span class="n">major</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">||</span> <span class="p">(</span><span class="n">props</span><span class="p">.</span><span class="n">major</span> <span class="o">==</span> <span class="n">major</span> <span class="o">&amp;&amp;</span> <span class="n">props</span><span class="p">.</span><span class="n">minor</span> <span class="o">&gt;=</span> <span class="n">minor</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">device</span> <span class="o">==</span> <span class="n">devCount</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"No device above 1.2 compute capability detected. </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="n">cudaSetDevice</span><span class="p">(</span><span class="n">device</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 
 <h3>
 <a name="lab-3--sum--dot-product" class="anchor" href="#lab-3--sum--dot-product"><span class="octicon octicon-link"></span></a>Lab 3 : Sum / Dot product</h3>
@@ -119,7 +144,7 @@ De plus, nous séparons les codes C et CUDA dans des fichiers différents et ré
 <h3>
 <a name="auteurs" class="anchor" href="#auteurs"><span class="octicon octicon-link"></span></a>Auteurs</h3>
 
-<p>Les étudiants ayant participés à ce projet sont M. David BOTTIAU et M. Matthieu LEFEVRE, étudiant en 4ème année à l'EPSI d'Arras.</p>
+<p>Les étudiants ayant participés à ce projet sont M. David BOTTIAU et M. Matthieu LEFEVRE, étudiants en 4ème année à l'EPSI d'Arras.</p>
       </section>
     </div>
 
