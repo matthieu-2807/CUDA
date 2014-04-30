@@ -101,7 +101,7 @@ De plus, nous séparons les codes C et CUDA dans des fichiers différents et ré
     <span class="p">}</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">device</span> <span class="o">==</span> <span class="n">devCount</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">"No device above 1.2 compute capability detected. </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"No device above 1.3 compute capability detected. </span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
         <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">else</span> <span class="n">cudaSetDevice</span><span class="p">(</span><span class="n">device</span><span class="p">);</span>
