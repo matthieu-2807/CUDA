@@ -75,31 +75,6 @@
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kt">int</span>  <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">720896</span><span class="p">;</span>  <span class="cm">/* default vector size */</span>
-    <span class="kt">float</span> <span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="o">*</span><span class="n">devPtrA</span><span class="p">;</span>
-
-<span class="c1">// ...</span>
-
-    <span class="cm">/* allocate host memory */</span>
-    <span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
-    <span class="cm">/* ----- GPU add-on ------- */</span>
-    <span class="n">cudaSafeCall</span><span class="p">(</span> <span class="n">cudaMalloc</span><span class="p">((</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">devPtrA</span><span class="p">,</span> <span class="n">N</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">))</span> <span class="p">);</span> 
-    <span class="n">cudaSafeCall</span><span class="p">(</span> <span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">devPtrA</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">N</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">),</span> <span class="n">cudaMemcpyHostToDevice</span><span class="p">)</span> <span class="p">);</span>
-
-<span class="c1">//...</span>
-
-    <span class="cm">/* call compute kernel */</span>
-    <span class="n">vecAdd</span><span class="o">&lt;&lt;&lt;</span><span class="n">N</span><span class="o">/</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="o">&gt;&gt;&gt;</span><span class="p">(</span><span class="n">devPtrA</span><span class="p">,</span> <span class="n">devPtrB</span><span class="p">,</span> <span class="n">devPtrC</span><span class="p">);</span>
-
-    <span class="n">cudaSafeCall</span><span class="p">(</span> <span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">devPtrC</span><span class="p">,</span> <span class="n">N</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">),</span>  <span class="n">cudaMemcpyDeviceToHost</span><span class="p">)</span> <span class="p">);</span>
-
-<span class="c1">//...    </span>
-
-    <span class="n">cudaSafeCall</span><span class="p">(</span> <span class="n">cudaFree</span><span class="p">(</span><span class="n">devPtrA</span><span class="p">)</span> <span class="p">);</span>
-    <span class="n">free</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
-<span class="p">}</span>
 </pre></div>
 
 <h3>
@@ -136,6 +111,10 @@ De plus, nous séparons les codes C et CUDA dans des fichiers différents et ré
 
 <h3>
 <a name="lab-4--matrix-matrix-multiplication" class="anchor" href="#lab-4--matrix-matrix-multiplication"><span class="octicon octicon-link"></span></a>Lab 4 : Matrix-Matrix multiplication</h3>
+
+<p>Les jeux vidéos utilisent en permanence des matrices afin de mettre à jour les données à afficher sur votre écran. Cela peut être l'affichage d'un personnage ou le déplacement de la caméra. Nous allons voir ici un petit exemple d'utilisation de CUDA pour exécuter des traitements parallèles sur de très grandes matrices.</p>
+
+<p>Dans l'exemple présenté, nous utilisons CUDA pour récupérer le résultat d'une multiplication entre 2 matrices. Par défaut, nous aurions tendance à boucler sur les différents éléments des 2 matrices pour effectuer nos calculs. Grâce au traitement, nous pouvons réduire ces boucles (3) à une seule boucle qui parcourt chaque élement de la matrice finale.</p>
 
 <h3>
 <a name="auteurs" class="anchor" href="#auteurs"><span class="octicon octicon-link"></span></a>Auteurs</h3>
