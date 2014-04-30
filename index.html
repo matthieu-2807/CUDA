@@ -43,13 +43,13 @@ Nous avons utilisé l'identifiant etudiant1 pour ce cours. Tous les fichiers son
 <p>Le Lab 0 est la découverte de CUDA, nous commençons donc avec le fameux Hello World.</p>
 
 <div class="highlight highlight-c"><pre><span class="cp">#include &lt;stdlib.h&gt;</span>
-<span class="cp">#include &lt;stdio.h&gt;</span>
-<span class="n">__global__</span> <span class="kt">void</span> <span class="nf">kernel</span><span class="p">(</span><span class="kt">void</span><span class="p">){}</span>
+<span class="cp">#include &lt;stdio.h&gt;</span><br />
+<span class="n">__global__</span> <span class="kt">void</span> <span class="nf">kernel</span><span class="p">(</span><span class="kt">void</span><span class="p">) {}</span><br />
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-<span class="n">kernel</span><span class="o">&lt;&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">&gt;&gt;&gt;</span><span class="p">();</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">"Hello World !</span><span class="se">\n</span><span class="s">);</span>
-<span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
+<span class="n">    kernel</span><span class="o">&lt;&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">&gt;&gt;&gt;</span><span class="p">();</span>
+<span class="n">    printf</span><span class="p">(</span><span class="s">"Hello World !</span><span class="se">\n</span><span class="s">);</span>
+<span class="k">    return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -65,9 +65,30 @@ Nous avons utilisé l'identifiant etudiant1 pour ce cours. Tous les fichiers son
 De plus, nous séparons les codes C et CUDA dans des fichiers différents et réalisons un makefile permettant de compiler plusieurs fichier (.c et .cu) en une commande.</p>
 
 <h3>
+<a name="lab-3--dot-product" class="anchor" href="#lab-3--dot-product"><span class="octicon octicon-link"></span></a>Lab 3 : Sum / Dot product</h3>
+
+<p>La somme (ou produit scalaire = "dot product") consiste à prendre des groupes de 2 nombres (entiers, décimaux, …) et de faire la somme des produits de ces 2 nombres.</p>
+
+<p>Voici le code utilisé par le CPU pour le produit scalaire :</p>
+
+<p>float dot(float* A, float* B, int N)
+{ 
+	int i;
+	float s = 0.0f;
+
+	for (i = 0; i < N; i++)
+		s += A[i] * B[i]; 
+
+	return s;
+}</p>
+
+<h3>
+<a name="lab-4--Matrix-Matrix" class="anchor" href="#lab-2--device-management-api"><span class="octicon octicon-link"></span></a>Lab 4 : Matrix-Matrix multiplication</h3>
+
+<h3>
 <a name="auteurs" class="anchor" href="#auteurs"><span class="octicon octicon-link"></span></a>Auteurs</h3>
 
-<p>Les étudiants ayant participer à ce projet sont M. David BOTTIAU et M. Matthieu LEFEVRE, étudiant en 4ème année à l'EPSI d'Arras.</p>
+<p>Les étudiants ayant participer à ce projet sont M. David BOTTIAU et M. Matthieu LEFEVRE, étudiants en 4ème année à l'EPSI d'Arras.</p>
       </section>
     </div>
 
