@@ -323,9 +323,9 @@ int lab4_gpu()
     clock_t t1, t2, ta, tb;
     float flop, gflop;
     
-    int *a = (int *)malloc(N*N*sizeof(int));
-    int *b = (int *)malloc(N*N*sizeof(int));
-    int *c = (int *)malloc(N*N*sizeof(int));
+    float *a = (float *)malloc(N*N*sizeof(float));
+    float *b = (float *)malloc(N*N*sizeof(float));
+    float *c = (float *)malloc(N*N*sizeof(float));
 
     minit(a, b, c, N);
 

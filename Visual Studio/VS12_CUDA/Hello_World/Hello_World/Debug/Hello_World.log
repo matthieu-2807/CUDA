@@ -1,10 +1,10 @@
-﻿La génération a démarré 30/04/2014 17:40:28.
+﻿La génération a démarré 30/04/2014 18:56:28.
      1>Projet "C:\Users\David Bottiau\Desktop\CUDA\VS12_CUDA\Hello_World\Hello_World\Hello_World.vcxproj" sur le nœud 2 (Build cible(s)).
      1>AddCudaCompileDeps:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /DWIN32 /D_DEBUG /D_CONSOLE /D_MBCS /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" /I. /FIcuda_runtime.h /c "C:\Users\David Bottiau\Desktop\CUDA\VS12_CUDA\Hello_World\Hello_World\kernel.cu" 
        CudaBuild:
          Compiling CUDA source file kernel.cu...
-         cmd.exe /C "C:\Users\David Bottiau\AppData\Local\Temp\tmp22b4e1c9364a4ae0888132e5045e6666.cmd"
+         cmd.exe /C "C:\Users\David Bottiau\AppData\Local\Temp\tmpc259de6a61b04ef484cc5f2c4b529793.cmd"
          "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\nvcc.exe" -gencode=arch=compute_10,code=\"sm_10,compute_10\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o Debug\kernel.cu.obj "C:\Users\David Bottiau\Desktop\CUDA\VS12_CUDA\Hello_World\Hello_World\kernel.cu"
          
          C:\Users\David Bottiau\Desktop\CUDA\VS12_CUDA\Hello_World\Hello_World>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\nvcc.exe" -gencode=arch=compute_10,code=\"sm_10,compute_10\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o Debug\kernel.cu.obj "C:\Users\David Bottiau\Desktop\CUDA\VS12_CUDA\Hello_World\Hello_World\kernel.cu" 
@@ -15,20 +15,20 @@
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(202): warning : variable "devPtrA" was declared but never referenced
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(202): warning : variable "devPtrB" was declared but never referenced
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(202): warning : variable "devPtrS" was declared but never referenced
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(317): warning : variable "ta" was declared but never referenced
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(317): warning : variable "tb" was declared but never referenced
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(350): warning : variable "ta" was declared but never referenced
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(350): warning : variable "tb" was declared but never referenced
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(290): warning : variable "ta" was declared but never referenced
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(290): warning : variable "tb" was declared but never referenced
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(323): warning : variable "ta" was declared but never referenced
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(323): warning : variable "tb" was declared but never referenced
      1>c:\users\david bottiau\desktop\cuda\vs12_cuda\hello_world\hello_world\Util.h(14): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>c:\users\david bottiau\desktop\cuda\vs12_cuda\hello_world\hello_world\Util.h(25): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(122): warning : variable "rt" is used before its value is set
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(202): warning : variable "devPtrA" was declared but never referenced
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(202): warning : variable "devPtrB" was declared but never referenced
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(202): warning : variable "devPtrS" was declared but never referenced
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(317): warning : variable "ta" was declared but never referenced
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(317): warning : variable "tb" was declared but never referenced
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(350): warning : variable "ta" was declared but never referenced
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(350): warning : variable "tb" was declared but never referenced
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(290): warning : variable "ta" was declared but never referenced
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(290): warning : variable "tb" was declared but never referenced
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(323): warning : variable "ta" was declared but never referenced
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(323): warning : variable "tb" was declared but never referenced
          kernel.cu
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(88): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(169): warning C4244: 'argument' : conversion from '__int64' to 'size_t', possible loss of data
@@ -37,20 +37,16 @@
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(202): warning C4101: 'devPtrS' : unreferenced local variable
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(202): warning C4101: 'devPtrB' : unreferenced local variable
      1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(202): warning C4101: 'devPtrA' : unreferenced local variable
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(293): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(294): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(295): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(340): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(317): warning C4101: 'ta' : unreferenced local variable
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(317): warning C4101: 'tb' : unreferenced local variable
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(361): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(373): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(350): warning C4101: 'ta' : unreferenced local variable
-     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(350): warning C4101: 'tb' : unreferenced local variable
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(313): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(290): warning C4101: 'ta' : unreferenced local variable
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(290): warning C4101: 'tb' : unreferenced local variable
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(346): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(323): warning C4101: 'ta' : unreferenced local variable
+     1>C:/Users/David Bottiau/Desktop/CUDA/VS12_CUDA/Hello_World/Hello_World/kernel.cu(323): warning C4101: 'tb' : unreferenced local variable
      1>c:\users\david bottiau\desktop\cuda\vs12_cuda\hello_world\hello_world\kernel.cu(122): warning C4700: uninitialized local variable 'rt' used
        CudaBuild:
          Compiling CUDA source file mmult.cu...
-         cmd.exe /C "C:\Users\David Bottiau\AppData\Local\Temp\tmpd9d89a9543834167b0ec28532c991395.cmd"
+         cmd.exe /C "C:\Users\David Bottiau\AppData\Local\Temp\tmp80ce0d3d47d9422e9079750933dc6b04.cmd"
          "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\nvcc.exe" -gencode=arch=compute_10,code=\"sm_10,compute_10\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o Debug\mmult.cu.obj "C:\Users\David Bottiau\Desktop\CUDA\VS12_CUDA\Hello_World\Hello_World\mmult.cu"
          
          C:\Users\David Bottiau\Desktop\CUDA\VS12_CUDA\Hello_World\Hello_World>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\bin\nvcc.exe" -gencode=arch=compute_10,code=\"sm_10,compute_10\" --use-local-env --cl-version 2012 -ccbin "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin"  -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.0\include"  -G   --keep-dir Debug -maxrregcount=0  --machine 32 --compile -cudart static  -g   -DWIN32 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Zi /RTC1 /MDd  " -o Debug\mmult.cu.obj "C:\Users\David Bottiau\Desktop\CUDA\VS12_CUDA\Hello_World\Hello_World\mmult.cu" 
@@ -66,10 +62,10 @@
          Debug\mmult.cu.obj
          Debug\Util.cu.obj
          Debug\vecadd.cu.obj
-     1>kernel.cu.obj : error LNK2019: unresolved external symbol "float __cdecl mmult(int *,int *,int *,int)" (?mmult@@YAMPAH00H@Z) referenced in function "int __cdecl lab4_gpu(void)" (?lab4_gpu@@YAHXZ)
+     1>kernel.cu.obj : error LNK2019: unresolved external symbol "float __cdecl mmult(float *,float *,float *,int)" (?mmult@@YAMPAM00H@Z) referenced in function "int __cdecl lab4_gpu(void)" (?lab4_gpu@@YAHXZ)
      1>C:\Users\David Bottiau\Desktop\CUDA\VS12_CUDA\Hello_World\Debug\Hello_World.exe : fatal error LNK1120: 1 unresolved externals
      1>Génération du projet "C:\Users\David Bottiau\Desktop\CUDA\VS12_CUDA\Hello_World\Hello_World\Hello_World.vcxproj" terminée (Build cible(s)) -- ÉCHEC.
 
 ÉCHEC de la build.
 
-Temps écoulé 00:00:15.72
+Temps écoulé 00:00:14.43
